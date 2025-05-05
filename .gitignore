@@ -12,4 +12,33 @@ yarn-error.log
 
 # OS
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# Python
+*.py
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 特定忽略的文件
+*.txt
+123
+README.md 
