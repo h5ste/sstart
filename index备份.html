@@ -1,36 +1,74 @@
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Launcher 在线注册机</title>
-<link rel="stylesheet" href="style.css">
-<!-- 先加载SDK脚本 -->
-<script src="vika-sdk.js"></script>
-<!-- 延迟加载应用脚本 -->
-<script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- 先加载SDK脚本 -->
+    <script src="vika-sdk.js"></script>
+    <!-- 延迟加载应用脚本 -->
+    <script src="app.js" defer></script>
 </head>
 <body>
-<div class="container">
-<h1>Launcher 在线注册机</h1>
-
-<div class="form-group">
+    <div class="container">
+        <h1>Launcher 在线注册机</h1>
+        
+        <div class="form-group">
             <label for="machineCode">用户机器码：</label>
             <input type="text" id="machineCode" placeholder="输入格式：XXXX-XXXX-XXXX-XXXX" autocomplete="off" spellcheck="false">
-</div>
-
-<div class="btn-group">
-@@ -25,7 +25,7 @@ <h1>Launcher 在线注册机</h1>
-</div>
-
-<div class="result-container">
+        </div>
+        
+        <div class="btn-group">
+            <button id="generateBtn" disabled>生成激活码</button>
+            <button id="clearBtn" class="secondary">清空</button>
+        </div>
+        
+        <div class="result-container">
             <label>激活码：</label>
-<div class="result" id="result">
-<span id="activationCode"></span>
-</div>
-@@ -35,7 +35,7 @@ <h1>Launcher 在线注册机</h1>
-</div>
-
-<div class="log-container">
+            <div class="result" id="result">
+                <span id="activationCode"></span>
+            </div>
+            <div class="form-group" style="margin-top: 10px;">
+                <button id="copyBtn" disabled style="width: 100%;">复制激活码</button>
+            </div>
+        </div>
+        
+        <div class="log-container">
             <label>操作日志：</label>
-<div class="log" id="log"></div>
-</div>
+            <div class="log" id="log"></div>
+        </div>
+        
+        <div class="instructions">
+            <h3>使用说明</h3>
+            <ol>
+                <li>从用户处获取机器码（格式为：XXXX-XXXX-XXXX-XXXX）</li>
+                <li>将机器码输入到上方输入框</li>
+                <li>点击"生成激活码"按钮</li>
+                <li>复制生成的激活码并提供给用户</li>
+                <li>用户在Launcher中输入激活码完成激活</li>
+            </ol>
+        </div>
+        
+        <footer>
+            <p>© 2025 Launcher 在线注册机 | 填写验证码获取激活码</p>
+        </footer>
+    </div>
+
+    <!-- 验证码弹窗 -->
+    <div class="captcha-container hidden" id="captchaContainer">
+        <div class="captcha-box">
+            <div class="captcha-title">请输入验证码</div>
+            <p style="font-size: 14px; color: #666; text-align: center; margin-bottom: 15px;">
+                为保证服务质量，请先输入验证码
+            </p>
+            <input type="text" id="captchaInput" class="captcha-input" placeholder="请输入验证码" autocomplete="off">
+            <div class="captcha-message" id="captchaMessage"></div>
+            <div class="captcha-btn-group">
+                <button class="captcha-btn captcha-cancel-btn" id="captchaCancelBtn">取消</button>
+                <button class="captcha-btn captcha-verify-btn" id="captchaVerifyBtn">验证</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
