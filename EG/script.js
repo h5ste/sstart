@@ -1,6 +1,6 @@
 // 全局变量
 // const API_BASE_URL = 'https://cn.eagle.cool';
-const API_BASE_URL = 'http://localhost:8080'; // 使用本地代理服务器
+const API_BASE_URL = 'https://shentianen.xyz'; // 使用本地代理服务器
 const LICENSE_CODE = 'EG-C32B-C021-C9DF-ECAD';
 const EMAIL = 'zhaojun649273552@qq.com'; // 用于注销设备的邮箱
 
