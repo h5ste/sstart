@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#3498db">
+    <title>Eagle 设备管理</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-eagle"></i>
+                <h1>Eagle 设备管理系统</h1>
+            </div>
+            <div class="license-info">
+                <span id="licenseCode">序列号: EG-C32B-C021-C9DF-ECAD</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="card">
+                <div class="card-header">
+                    <h2>已注册设备</h2>
+                    <div class="actions">
+                        <button id="refreshBtn" class="btn btn-refresh" role="button">
+                            <i class="fas fa-sync-alt"></i> 刷新
+                        </button>
+                        <button id="removeAllBtn" class="btn btn-danger" role="button">
+                            <i class="fas fa-trash-alt"></i> 移除所有设备
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="loading-container" id="loadingContainer">
+                    <div class="loading-spinner"></div>
+                    <p>正在加载设备信息...</p>
+                </div>
+                
+                <div class="device-count" id="deviceCount">
+                    已注册设备: <span id="count">0</span>
+                </div>
+
+                <div class="table-container">
+                    <table id="devicesTable">
+                        <thead>
+                            <tr>
+                                <th>设备名称</th>
+                                <th>注册时间</th>
+                                <th>平台</th>
+                                <th>设备ID</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="devicesList">
+                            <!-- 设备列表将通过JavaScript动态生成 -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="no-devices" id="noDevices">
+                    <i class="fas fa-laptop-code"></i>
+                    <p>暂无已注册设备</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 确认对话框 -->
+    <div class="modal" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">确认操作</h3>
+                <span class="close-modal" role="button" aria-label="关闭">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p id="confirmMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelBtn" class="btn" role="button">取消</button>
+                <button id="confirmBtn" class="btn btn-danger" role="button">确认</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 通知提示 -->
+    <div class="toast" id="toast" role="alert" aria-live="assertive">
+        <div class="toast-content">
+            <i id="toastIcon" class="fas"></i>
+            <div class="toast-message" id="toastMessage"></div>
+        </div>
+        <div class="toast-progress"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
