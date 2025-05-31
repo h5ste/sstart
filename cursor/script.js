@@ -24,8 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
         resetButton.textContent = '正在请求...';
 
         try {
-            // 构建API URL
-            const apiUrl = `http://82.157.20.83:9091/api/cursorLoginZs/getCredentials?device_code=${encodeURIComponent(deviceCode)}&device_code_md5=${encodeURIComponent(deviceCodeMd5)}`;
+            // 构建API URL - 修改为HTTPS或使用相对路径通过代理
+            // 原始URL: http://82.157.20.83:9091/api/cursorLoginZs/getCredentials
+            // 方案1: 使用相对路径通过代理转发(推荐)
+            const apiUrl = `/api/cursor-proxy?device_code=${encodeURIComponent(deviceCode)}&device_code_md5=${encodeURIComponent(deviceCodeMd5)}`;
+            
+            // 方案2: 如果API支持HTTPS，直接使用HTTPS
+            // const apiUrl = `https://82.157.20.83:9091/api/cursorLoginZs/getCredentials?device_code=${encodeURIComponent(deviceCode)}&device_code_md5=${encodeURIComponent(deviceCodeMd5)}`;
             
             // 发送GET请求
             const response = await fetch(apiUrl);
