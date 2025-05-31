@@ -1,5 +1,5 @@
 // 用于在Vercel上代理Cursor API请求的serverless函数
-// 此文件需要放在项目的/api目录下，以便在Vercel上自动部署为API路由
+// 使用index.js文件确保路由能被正确识别
 
 const http = require('http');
 const url = require('url');

@@ -24,17 +24,46 @@ document.addEventListener('DOMContentLoaded', () => {
         resetButton.textContent = '正在请求...';
 
         try {
-            // 构建API URL - 修改为HTTPS或使用相对路径通过代理
-            // 原始URL: http://82.157.20.83:9091/api/cursorLoginZs/getCredentials
-            // 方案1: 使用相对路径通过代理转发(推荐)
+            console.log('开始发送请求...');
+            // 构建API URL - 使用相对路径通过代理转发
+            // 原路径: /api/cursor-proxy
+            // 新路径: /api/cursor-proxy (对应于 api/cursor-proxy/index.js)
             const apiUrl = `/api/cursor-proxy?device_code=${encodeURIComponent(deviceCode)}&device_code_md5=${encodeURIComponent(deviceCodeMd5)}`;
+            console.log('请求URL:', apiUrl);
             
-            // 方案2: 如果API支持HTTPS，直接使用HTTPS
-            // const apiUrl = `https://82.157.20.83:9091/api/cursorLoginZs/getCredentials?device_code=${encodeURIComponent(deviceCode)}&device_code_md5=${encodeURIComponent(deviceCodeMd5)}`;
+            // 发送GET请求，添加详细的错误处理
+            const response = await fetch(apiUrl, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
             
-            // 发送GET请求
-            const response = await fetch(apiUrl);
-            const data = await response.json();
+            console.log('收到响应:', response.status, response.statusText);
+            
+            // 如果响应不成功，抛出错误
+            if (!response.ok) {
+                let errorText = '';
+                try {
+                    const errorJson = await response.json();
+                    console.error('API错误:', errorJson);
+                    errorText = JSON.stringify(errorJson, null, 2);
+                } catch (e) {
+                    errorText = await response.text();
+                }
+                throw new Error(`服务器响应错误: ${response.status} ${response.statusText}\n${errorText}`);
+            }
+            
+            // 尝试解析JSON响应
+            let data;
+            try {
+                data = await response.json();
+                console.log('响应数据:', data);
+            } catch (e) {
+                console.error('JSON解析错误:', e);
+                const text = await response.text();
+                throw new Error(`无法解析JSON响应: ${e.message}\n原始响应: ${text.substring(0, 200)}`);
+            }
             
             // 检查响应中是否包含email
             if (data && data.data && data.data.email) {
@@ -42,9 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const detailsHtml = createDetailsHtml(data);
                 showResult('重置成功！', detailsHtml, 'success');
             } else {
-                showResult('重置失败', '未能获取到邮箱信息', 'error');
+                console.error('API响应格式不正确:', data);
+                showResult('重置失败', `未能获取到邮箱信息。服务器响应: ${JSON.stringify(data, null, 2)}`, 'error');
             }
         } catch (error) {
+            console.error('请求出错:', error);
             showResult('请求出错', `错误信息: ${error.message}`, 'error');
         } finally {
             // 恢复按钮状态
