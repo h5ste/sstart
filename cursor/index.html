@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor 额度重置工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cursor 额度重置工具</h1>
+        <div class="input-group">
+            <label for="device_code">设备码 (device_code):</label>
+            <input type="text" id="device_code" placeholder="请输入设备码，例如：C02DMD55MD6M" value="C02DMD55MD6M">
+        </div>
+        <div class="input-group">
+            <label for="device_code_md5">设备码MD5 (device_code_md5):</label>
+            <input type="text" id="device_code_md5" placeholder="请输入设备码MD5，例如：7be90294549af1e77975fefb8529ec17" value="7be90294549af1e77975fefb8529ec17">
+        </div>
+        <button id="reset-btn">重置额度</button>
+        <div id="result" class="result-hidden">
+            <p id="status-message"></p>
+            <p id="email-display"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
