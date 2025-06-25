@@ -1,0 +1,575 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+unified-delay: true
+hosts:
+  time.facebook.com: 17.253.84.125
+  time.android.com: 17.253.84.125
+dns:
+  enable: true
+  use-hosts: true
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+    - 223.6.6.6
+    - tcp://223.5.5.5
+    - tcp://223.6.6.6
+    - tls://dns.google:853
+    - tls://8.8.8.8:853
+    - tls://8.8.4.4:853
+    - tls://dns.alidns.com
+    - tls://223.5.5.5
+    - tls://223.6.6.6
+    - tls://dot.pub
+    - tls://1.12.12.12
+    - tls://120.53.53.53
+    - https://dns.google/dns-query
+    - https://8.8.8.8/dns-query
+    - https://8.8.4.4/dns-query
+    - https://dns.alidns.com/dns-query
+    - https://223.5.5.5/dns-query
+    - https://223.6.6.6/dns-query
+    - https://doh.pub/dns-query
+    - https://1.12.12.12/dns-query
+    - https://120.53.53.53/dns-query
+  default-nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+    - 223.6.6.6
+    - tcp://119.29.29.29
+    - tcp://223.5.5.5
+    - tcp://223.6.6.6
+proxies:
+  - name: 🇭🇰 香港S01
+    server: 0zzwj-g06.hk01-ae5.entry.v50307shvkaa.art
+    port: 19276
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇯🇵 日本S01 | x0.8
+    server: cp2jh-g06.jp01-ae5.entry.v50307shvkaa.art
+    port: 477
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇭🇰 香港S02 | IEPL
+    server: lwvk1-g06.hk02-ae5.entry.v50307shvkaa.art
+    port: 14564
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇯🇵 日本S02 | x0.8
+    server: cpxfm-g06.jp02-ae5.entry.v50307shvkaa.art
+    port: 487
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇭🇰 香港S03 | IEPL
+    server: znctd-g06.hk03-ae5.entry.v50307shvkaa.art
+    port: 764
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇯🇵 日本S03 | x0.8
+    server: p7x5j-g06.jp03-ae5.entry.v50307shvkaa.art
+    port: 492
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇭🇰 香港S04 | IEPL
+    server: x7a9o-g06.hk04-ae5.entry.v50307shvkaa.art
+    port: 808
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇯🇵 日本S04 | x0.8
+    server: j59tb-g06.jp04-ae5.entry.v50307shvkaa.art
+    port: 497
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇭🇰 香港S05 | IEPL
+    server: ggo66-g06.hk05-ae5.entry.v50307shvkaa.art
+    port: 1816
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇯🇵 日本S05 | 下载专用 | x0.01
+    server: 9omq9-g06.jp05-vm5.entry.rtysjur.quest
+    port: 64659
+    type: vmess
+    uuid: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    alterId: 1
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 🇭🇰 香港S06 | x0.8
+    server: ne3nz-g06.hk06-ae5.entry.v50307shvkaa.art
+    port: 1417
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇯🇵 日本S06 | 下载专用 | x0.01
+    server: kaj3d-g06.jp06-vm5.entry.rtysjur.quest
+    port: 667
+    type: vmess
+    uuid: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    alterId: 1
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 🇭🇰 香港S07 | x0.8
+    server: kuroq-g06.hk07-ae5.entry.v50307shvkaa.art
+    port: 1424
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇯🇵 日本S07 | x0.8
+    server: 8d5e1-g06.jp07-ae5.entry.v50307shvkaa.art
+    port: 14009
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇭🇰 香港S08 | x0.8
+    server: t7tgy-g06.hk08-ae5.entry.v50307shvkaa.art
+    port: 18647
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇯🇵 日本S08 | x0.8
+    server: 2t04s-g06.jp08-ae5.entry.v50307shvkaa.art
+    port: 12547
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇭🇰 香港S09 | IEPL
+    server: z15n5-g06.hk09-vm5.entry.v50307shvkaa.art
+    port: 15269
+    type: vmess
+    uuid: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    alterId: 1
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 🇯🇵 日本S09 | x0.8
+    server: i03r9-g06.jp09-ae5.entry.v50307shvkaa.art
+    port: 11162
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇭🇰 香港S10 | IEPL
+    server: vx6m1-g06.hk10-vm5.entry.v50307shvkaa.art
+    port: 13487
+    type: vmess
+    uuid: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    alterId: 1
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: bgp-01-10.entry-0.chinasnow.net
+    udp: true
+  - name: 🇯🇵 日本S10 | x0.8
+    server: 5q7o1-g06.jp10-ae5.entry.v50307shvkaa.art
+    port: 16528
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇭🇰 香港S11 | IEPL
+    server: 9qh2d-g06.hk11-vm5.entry.v50307shvkaa.art
+    port: 579
+    type: vmess
+    uuid: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    alterId: 1
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /tutorial/iphone13.m3u8
+      headers:
+        Host: bgp-01-11.entry-0.chinasnow.net
+    udp: true
+  - name: 🇯🇵 日本S11 | x0.8
+    server: pxym4-g06.jp11-ae5.entry.v50307shvkaa.art
+    port: 17745
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇯🇵 日本S12 | IEPL | 测试
+    server: tlejb-g06.jp12-ae5.entry.v50307shvkaa.art
+    port: 502
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇸🇬 新加坡S01
+    server: 77k8t-g06.sg01-ae5.entry.v50307shvkaa.art
+    port: 20004
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇸🇬 新加坡S02
+    server: knn74-g06.sg02-ae5.entry.v50307shvkaa.art
+    port: 20079
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇸🇬 新加坡S03 | IEPL | x2
+    server: dhmkc-g06.sg03-ae5.entry.v50307shvkaa.art
+    port: 20084
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇨🇳 台湾S01 | IEPL | x2
+    server: z68nt-g06.tw01-ae5.entry.v50307shvkaa.art
+    port: 20009
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇺🇲 美国S01
+    server: eskuq-g06.us01-ae5.entry.v50307shvkaa.art
+    port: 20014
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇺🇲 美国S02
+    server: yd507-g06.us02-ae5.entry.v50307shvkaa.art
+    port: 20019
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇬🇧 英国S01
+    server: 18rvf-g06.gb01-ae5.entry.v50307shvkaa.art
+    port: 20024
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇦🇷 阿根廷S01
+    server: 8a602-g06.ar01-ae5.entry.v50307shvkaa.art
+    port: 20029
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇷🇺 俄罗斯S01
+    server: 06beu-g06.ru01-ae5.entry.v50307shvkaa.art
+    port: 20034
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇹🇷 土耳其S01
+    server: qx48m-g06.tr01-ae5.entry.v50307shvkaa.art
+    port: 20039
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇰🇷 韩国S01
+    server: d71pe-g06.kr01-ae5.entry.v50307shvkaa.art
+    port: 20044
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇮🇳 印度S01
+    server: 6bd16-g06.in01-ae5.entry.v50307shvkaa.art
+    port: 20049
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇩🇪 德国S01
+    server: 7zy5n-g06.de01-ae5.entry.v50307shvkaa.art
+    port: 20054
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇨🇦 加拿大S01
+    server: v87xg-g06.ca01-ae5.entry.v50307shvkaa.art
+    port: 20059
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇦🇺 澳大利亚S01
+    server: kffpz-g06.au01-ae5.entry.v50307shvkaa.art
+    port: 20064
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇫🇷 法国S01
+    server: 0xtnx-g06.fr01-ae5.entry.v50307shvkaa.art
+    port: 20069
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇺🇦 乌克兰S01
+    server: eh69r-g06.ua01-ae5.entry.v50307shvkaa.art
+    port: 20074
+    type: ss
+    cipher: aes-256-gcm
+    password: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    udp: true
+  - name: 🇯🇵 免费-日本1-Ver.7
+    server: 496p2-g06.jp01-nn-vm0.entry.fr0528.art
+    port: 21586
+    type: vmess
+    uuid: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    alterId: 1
+    cipher: auto
+    tls: true
+    skip-cert-verify: false
+    udp: true
+  - name: 🇯🇵 免费-日本2-Ver.8
+    server: mfngi-g06.jp02-e3-vm0.entry.fr0528.art
+    port: 11778
+    type: vmess
+    uuid: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    alterId: 1
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 🇯🇵 免费-日本3-Ver.7
+    server: xib94-g06.jp03-j7-vm0.entry.fr0528.art
+    port: 21586
+    type: vmess
+    uuid: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    alterId: 1
+    cipher: auto
+    tls: true
+    skip-cert-verify: false
+    udp: true
+  - name: 🇯🇵 免费-日本4-Ver.8
+    server: uc62w-g06.jp04-1d-vm0.entry.fr0528.art
+    port: 449
+    type: vmess
+    uuid: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    alterId: 1
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 🇯🇵 免费-日本5-Ver.9
+    server: i2pig-g06.jp05-h6-vm0.entry.fr0528.art
+    port: 46487
+    type: vmess
+    uuid: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    alterId: 1
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 🇯🇵 免费-日本6-Ver.8
+    server: 3q0hz-g06.jp06-jz-vm0.entry.fr0528.art
+    port: 28788
+    type: vmess
+    uuid: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    alterId: 1
+    cipher: auto
+    tls: true
+    skip-cert-verify: false
+    udp: true
+  - name: 🇯🇵 免费-日本7-Ver.2
+    server: r1shw-g06.jp07-sh-vm0.entry.fr0528.art
+    port: 28788
+    type: vmess
+    uuid: d2caeae0-1d5b-3d7a-a13d-c302d03c10a0
+    alterId: 1
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+proxy-groups:
+  - name: 🔰 选择节点
+    type: select
+    proxies:
+      - 🇭🇰 香港S01
+      - 🇯🇵 日本S01 | x0.8
+      - 🇭🇰 香港S02 | IEPL
+      - 🇯🇵 日本S02 | x0.8
+      - 🇭🇰 香港S03 | IEPL
+      - 🇯🇵 日本S03 | x0.8
+      - 🇭🇰 香港S04 | IEPL
+      - 🇯🇵 日本S04 | x0.8
+      - 🇭🇰 香港S05 | IEPL
+      - 🇯🇵 日本S05 | 下载专用 | x0.01
+      - 🇭🇰 香港S06 | x0.8
+      - 🇯🇵 日本S06 | 下载专用 | x0.01
+      - 🇭🇰 香港S07 | x0.8
+      - 🇯🇵 日本S07 | x0.8
+      - 🇭🇰 香港S08 | x0.8
+      - 🇯🇵 日本S08 | x0.8
+      - 🇭🇰 香港S09 | IEPL
+      - 🇯🇵 日本S09 | x0.8
+      - 🇭🇰 香港S10 | IEPL
+      - 🇯🇵 日本S10 | x0.8
+      - 🇭🇰 香港S11 | IEPL
+      - 🇯🇵 日本S11 | x0.8
+      - 🇯🇵 日本S12 | IEPL | 测试
+      - 🇸🇬 新加坡S01
+      - 🇸🇬 新加坡S02
+      - 🇸🇬 新加坡S03 | IEPL | x2
+      - 🇨🇳 台湾S01 | IEPL | x2
+      - 🇺🇲 美国S01
+      - 🇺🇲 美国S02
+      - 🇬🇧 英国S01
+      - 🇦🇷 阿根廷S01
+      - 🇷🇺 俄罗斯S01
+      - 🇹🇷 土耳其S01
+      - 🇰🇷 韩国S01
+      - 🇮🇳 印度S01
+      - 🇩🇪 德国S01
+      - 🇨🇦 加拿大S01
+      - 🇦🇺 澳大利亚S01
+      - 🇫🇷 法国S01
+      - 🇺🇦 乌克兰S01
+      - 🇯🇵 免费-日本1-Ver.7
+      - 🇯🇵 免费-日本2-Ver.8
+      - 🇯🇵 免费-日本3-Ver.7
+      - 🇯🇵 免费-日本4-Ver.8
+      - 🇯🇵 免费-日本5-Ver.9
+      - 🇯🇵 免费-日本6-Ver.8
+      - 🇯🇵 免费-日本7-Ver.2
+      - DIRECT
+  - name: 🌏 爱奇艺&哔哩哔哩
+    type: select
+    proxies:
+      - DIRECT
+      - 🇭🇰 香港S01
+      - 🇭🇰 香港S02 | IEPL
+      - 🇭🇰 香港S03 | IEPL
+      - 🇭🇰 香港S04 | IEPL
+      - 🇭🇰 香港S05 | IEPL
+      - 🇭🇰 香港S06 | x0.8
+      - 🇭🇰 香港S07 | x0.8
+      - 🇭🇰 香港S08 | x0.8
+      - 🇭🇰 香港S09 | IEPL
+      - 🇭🇰 香港S10 | IEPL
+      - 🇭🇰 香港S11 | IEPL
+      - 🇨🇳 台湾S01 | IEPL | x2
+  - name: 📺 动画疯
+    type: select
+    proxies:
+      - 🔰 选择节点
+      - 🇨🇳 台湾S01 | IEPL | x2
+      - DIRECT
+  - name: 🎮 Steam 登录/下载
+    type: select
+    proxies:
+      - DIRECT
+      - 🔰 选择节点
+      - 🇦🇷 阿根廷S01
+      - 🇷🇺 俄罗斯S01
+      - 🇹🇷 土耳其S01
+      - 🇮🇳 印度S01
+  - name: 🎮 Steam 商店/社区
+    type: select
+    proxies:
+      - 🔰 选择节点
+      - 🇦🇷 阿根廷S01
+      - 🇷🇺 俄罗斯S01
+      - 🇹🇷 土耳其S01
+      - 🇮🇳 印度S01
+      - DIRECT
+  - name: 🌩️ Cloudflare
+    type: select
+    proxies:
+      - 🔰 选择节点
+      - DIRECT
+  - name: ☁️ OneDrive
+    type: select
+    proxies:
+      - 🔰 选择节点
+      - DIRECT
+      - 🇯🇵 日本S01 | x0.8
+      - 🇯🇵 日本S02 | x0.8
+      - 🇯🇵 日本S03 | x0.8
+      - 🇯🇵 日本S04 | x0.8
+      - 🇯🇵 日本S05 | 下载专用 | x0.01
+      - 🇯🇵 日本S06 | 下载专用 | x0.01
+      - 🇯🇵 日本S07 | x0.8
+      - 🇯🇵 日本S08 | x0.8
+      - 🇯🇵 日本S09 | x0.8
+      - 🇯🇵 日本S10 | x0.8
+      - 🇯🇵 日本S11 | x0.8
+      - 🇯🇵 日本S12 | IEPL | 测试
+      - 🇯🇵 免费-日本1-Ver.7
+      - 🇯🇵 免费-日本2-Ver.8
+      - 🇯🇵 免费-日本3-Ver.7
+      - 🇯🇵 免费-日本4-Ver.8
+      - 🇯🇵 免费-日本5-Ver.9
+      - 🇯🇵 免费-日本6-Ver.8
+      - 🇯🇵 免费-日本7-Ver.2
+      - 🇭🇰 香港S01
+      - 🇭🇰 香港S02 | IEPL
+      - 🇭🇰 香港S03 | IEPL
+      - 🇭🇰 香港S04 | IEPL
+      - 🇭🇰 香港S05 | IEPL
+      - 🇭🇰 香港S06 | x0.8
+      - 🇭🇰 香港S07 | x0.8
+      - 🇭🇰 香港S08 | x0.8
+      - 🇭🇰 香港S09 | IEPL
+      - 🇭🇰 香港S10 | IEPL
+      - 🇭🇰 香港S11 | IEPL
+  - name: 🎓学术网站
+    type: select
+    proxies:
+      - DIRECT
+      - 🔰 选择节点
+  - name: 🇨🇳 国内网站
+    type: select
+    proxies:
+      - DIRECT
+      - 🔰 选择节点
+  - name: 🛑 拦截广告
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - 🔰 选择节点
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🔰 选择节点
+      - DIRECT
+rules:
+  - DOMAIN-KEYWORD,eagle,🇭🇰 香港S01
