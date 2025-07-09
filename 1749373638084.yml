@@ -15,7 +15,7 @@ dns:
     fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
     fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
 proxies:
-    - { name: '每月余量：571.91 GB', type: ss, server: 1.1.1.1, port: 1, cipher: chacha20-ietf-poly1305, password: 8b841c13-e01e-4158-9eff-f1bbbdd5fc2f, udp: true }
+    - { name: '每月余量：300.91 GB', type: ss, server: 1.1.1.1, port: 1, cipher: chacha20-ietf-poly1305, password: 8b841c13-e01e-4158-9eff-f1bbbdd5fc2f, udp: true }
     - { name: '距离下次重置剩余：365', type: ss, server: 1.1.1.1, port: 1, cipher: chacha20-ietf-poly1305, password: 8b841c13-e01e-4158-9eff-f1bbbdd5fc2f, udp: true }
     - { name: 套餐到期：2026-03-20, type: ss, server: 1.1.1.1, port: 1, cipher: chacha20-ietf-poly1305, password: 8b841c13-e01e-4158-9eff-f1bbbdd5fc2f, udp: true }
     - { name: 无法使用请更新订阅, type: ss, server: 1.1.1.1, port: 1, cipher: chacha20-ietf-poly1305, password: 8b841c13-e01e-4158-9eff-f1bbbdd5fc2f, udp: true }
@@ -39,9 +39,9 @@ proxies:
     - { name: 韩国01流媒体解锁, type: ss, server: jswguwuwhe245372uuu.kd1o4r.xyz, port: 21373, cipher: chacha20-ietf-poly1305, password: 8b841c13-e01e-4158-9eff-f1bbbdd5fc2f, udp: true }
     - { name: 韩国02流媒体解锁, type: ss, server: jswguwuwhe245372uuu.kd1o4r.xyz, port: 21373, cipher: chacha20-ietf-poly1305, password: 8b841c13-e01e-4158-9eff-f1bbbdd5fc2f, udp: true }
 proxy-groups:
-    - { name: Pig, type: select, proxies: [自动选择, 故障转移, '每月余量：571.91 GB', '距离下次重置剩余：365', 套餐到期：2026-03-20, 无法使用请更新订阅, 香港01流媒体解锁, 香港02流媒体解锁, 香港03流媒体解锁, 台湾01流媒体解锁, 台湾02流媒体解锁, 新加坡01流媒体解锁, 新加坡02流媒体解锁, 新加坡03流媒体解锁, 新加坡04流媒体解锁, 新加坡05流媒体解锁, 新加坡06流媒体解锁, 日本01流媒体解锁, 日本02流媒体解锁, 日本03流媒体解锁, ChatGPT解锁, 美国01流媒体解锁, 美国02流媒体解锁, 韩国01流媒体解锁, 韩国02流媒体解锁] }
-    - { name: 自动选择, type: url-test, proxies: ['每月余量：571.91 GB', '距离下次重置剩余：365', 套餐到期：2026-03-20, 无法使用请更新订阅, 香港01流媒体解锁, 香港02流媒体解锁, 香港03流媒体解锁, 台湾01流媒体解锁, 台湾02流媒体解锁, 新加坡01流媒体解锁, 新加坡02流媒体解锁, 新加坡03流媒体解锁, 新加坡04流媒体解锁, 新加坡05流媒体解锁, 新加坡06流媒体解锁, 日本01流媒体解锁, 日本02流媒体解锁, 日本03流媒体解锁, ChatGPT解锁, 美国01流媒体解锁, 美国02流媒体解锁, 韩国01流媒体解锁, 韩国02流媒体解锁], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
-    - { name: 故障转移, type: fallback, proxies: ['每月余量：571.91 GB', '距离下次重置剩余：365', 套餐到期：2026-03-20, 无法使用请更新订阅, 香港01流媒体解锁, 香港02流媒体解锁, 香港03流媒体解锁, 台湾01流媒体解锁, 台湾02流媒体解锁, 新加坡01流媒体解锁, 新加坡02流媒体解锁, 新加坡03流媒体解锁, 新加坡04流媒体解锁, 新加坡05流媒体解锁, 新加坡06流媒体解锁, 日本01流媒体解锁, 日本02流媒体解锁, 日本03流媒体解锁, ChatGPT解锁, 美国01流媒体解锁, 美国02流媒体解锁, 韩国01流媒体解锁, 韩国02流媒体解锁], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
+    - { name: Pig, type: select, proxies: [自动选择, 故障转移, '每月余量：300.91 GB', '距离下次重置剩余：365', 套餐到期：2026-03-20, 无法使用请更新订阅, 香港01流媒体解锁, 香港02流媒体解锁, 香港03流媒体解锁, 台湾01流媒体解锁, 台湾02流媒体解锁, 新加坡01流媒体解锁, 新加坡02流媒体解锁, 新加坡03流媒体解锁, 新加坡04流媒体解锁, 新加坡05流媒体解锁, 新加坡06流媒体解锁, 日本01流媒体解锁, 日本02流媒体解锁, 日本03流媒体解锁, ChatGPT解锁, 美国01流媒体解锁, 美国02流媒体解锁, 韩国01流媒体解锁, 韩国02流媒体解锁] }
+    - { name: 自动选择, type: url-test, proxies: ['每月余量：300.91 GB', '距离下次重置剩余：365', 套餐到期：2026-03-20, 无法使用请更新订阅, 香港01流媒体解锁, 香港02流媒体解锁, 香港03流媒体解锁, 台湾01流媒体解锁, 台湾02流媒体解锁, 新加坡01流媒体解锁, 新加坡02流媒体解锁, 新加坡03流媒体解锁, 新加坡04流媒体解锁, 新加坡05流媒体解锁, 新加坡06流媒体解锁, 日本01流媒体解锁, 日本02流媒体解锁, 日本03流媒体解锁, ChatGPT解锁, 美国01流媒体解锁, 美国02流媒体解锁, 韩国01流媒体解锁, 韩国02流媒体解锁], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: 故障转移, type: fallback, proxies: ['每月余量：300.91 GB', '距离下次重置剩余：365', 套餐到期：2026-03-20, 无法使用请更新订阅, 香港01流媒体解锁, 香港02流媒体解锁, 香港03流媒体解锁, 台湾01流媒体解锁, 台湾02流媒体解锁, 新加坡01流媒体解锁, 新加坡02流媒体解锁, 新加坡03流媒体解锁, 新加坡04流媒体解锁, 新加坡05流媒体解锁, 新加坡06流媒体解锁, 日本01流媒体解锁, 日本02流媒体解锁, 日本03流媒体解锁, ChatGPT解锁, 美国01流媒体解锁, 美国02流媒体解锁, 韩国01流媒体解锁, 韩国02流媒体解锁], url: 'http://www.gstatic.com/generate_204', interval: 7200 }
 rules:
     - 'DOMAIN,dadadadadada.lkjuygfrroljgroup.top,DIRECT'
     - 'DOMAIN-SUFFIX,services.googleapis.cn,Pig'
