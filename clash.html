@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clash 订阅管理</title>
+    <meta 名字="viewport" content="width=device-width, initial-scale=1。0">
+    <标题>Clash 订阅管理</标题>
     <style>
         * {
             margin: 0;
@@ -12,7 +12,7 @@
             font-family: "Microsoft YaHei", sans-serif;
         }
 
-        body {
+        内容 {
             background-color: #f5f6fa;
             display: flex;
             justify-content: center;
@@ -20,38 +20,38 @@
             height: 100vh;
         }
 
-        .container {
+        。container {
             background-color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0。1);
             width: 90%;
             max-width: 500px;
             padding: 30px;
         }
 
-        .header {
+        。header {
             text-align: center;
             margin-bottom: 30px;
         }
 
-        .header h1 {
+        。header h1 {
             color: #2c3e50;
             font-size: 24px;
             margin-bottom: 10px;
         }
 
-        .header p {
+        。header p {
             color: #7f8c8d;
             font-size: 14px;
         }
 
-        .button-group {
+        。button-group {
             display: flex;
             justify-content: space-around;
             margin-bottom: 25px;
         }
 
-        .btn {
+        。btn {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -59,7 +59,7 @@
             padding: 10px;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: 所有 0。3s;
             width: 100px;
             text-decoration: none;
         }
@@ -74,26 +74,26 @@
             color: white;
         }
 
-        .btn-accent {
+        。btn-accent {
             background-color: #e74c3c;
             color: white;
         }
 
-        .btn i {
+        。btn i {
             font-size: 24px;
             margin-bottom: 5px;
         }
 
-        .btn span {
+        。btn span {
             font-size: 14px;
             text-align: center;
         }
 
-        .option-list {
+        。option-list {
             margin-top: 25px;
         }
 
-        .option-item {
+        。option-item {
             display: flex;
             align-items: center;
             padding: 12px 15px;
@@ -102,22 +102,22 @@
             transition: background-color 0.2s;
         }
 
-        .option-item:hover {
+        。option-item:hover {
             background-color: #f7f9fa;
         }
 
-        .option-item i {
+        。option-item i {
             margin-right: 15px;
             color: #3498db;
             font-size: 18px;
         }
 
-        .option-item span {
+        。option-item span {
             color: #2c3e50;
             font-size: 14px;
         }
 
-        .toast {
+        。toast {
             position: fixed;
             top: 20px;
             left: 50%;
@@ -126,29 +126,29 @@
             color: white;
             padding: 10px 20px;
             border-radius: 4px;
-            display: none;
+            display: 无;
             z-index: 1000;
         }
 
         /* 模拟图标的样式 */
-        .icon-rss:before {
+        。icon-rss:before {
             content: "📡";
         }
-        .icon-settings:before {
+        。icon-settings:before {
             content: "⚙️";
         }
-        .icon-cart:before {
+        。icon-cart:before {
             content: "🛒";
         }
-        .icon-copy:before {
+        。icon-copy:before {
             content: "📋";
         }
-        .icon-import:before {
+        。icon-import:before {
             content: "📥";
         }
     </style>
 </head>
-<body>
+<内容>
     <div class="container">
         <div class="header">
             <h1>Clash 订阅管理</h1>
@@ -186,33 +186,33 @@
 
     <script>
         // 订阅地址
-        const subscriptionUrl = "http://shentianen.xyz/1749373638084.yml";
+        const subscriptionUrl = "http://shentianen.xyz/neibu.yml";
         
         // 复制订阅地址
-        document.getElementById('copySubscription').addEventListener('click', function() {
-            navigator.clipboard.writeText(subscriptionUrl).then(function() {
+        document。getElementById('copySubscription')。addEventListener('click', function() {
+            navigator。clipboard。writeText(subscriptionUrl)。then(function() {
                 showToast('订阅地址已复制到剪贴板');
-            }).catch(function(err) {
-                console.error('无法复制文本: ', err);
+            })。catch(function(err) {
+                console。error('无法复制文本: ', err);
                 alert('复制失败，请手动复制：' + subscriptionUrl);
             });
         });
 
         // 一键导入到Clash
-        document.getElementById('importToClash').addEventListener('click', function() {
+        document。getElementById('importToClash')。addEventListener('click', function() {
             // 构造 Clash 的导入链接
             const clashUrl = "clash://install-config?url=" + encodeURIComponent(subscriptionUrl);
-            window.location.href = clashUrl;
+            window。位置。href = clashUrl;
         });
 
         // 一键订阅按钮
-        document.getElementById('oneClickSubscribe').addEventListener('click', function() {
+        document。getElementById('oneClickSubscribe')。addEventListener('click', function() {
             const clashUrl = "clash://install-config?url=" + encodeURIComponent(subscriptionUrl);
-            window.location.href = clashUrl;
+            window。位置。href = clashUrl;
         });
 
         // 查看订阅按钮
-        document.getElementById('viewSubscription').addEventListener('click', function() {
+        document。getElementById('viewSubscription')。addEventListener('click', function() {
             window.open(subscriptionUrl, '_blank');
         });
 
