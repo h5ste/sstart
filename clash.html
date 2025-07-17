@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +7,8 @@
     <style>
         * {
             margin: 0;
-
+            padding: 0;
+            box-sizing: border-box;
             font-family: "Microsoft YaHei", sans-serif;
         }
 
@@ -62,6 +64,13 @@
             text-decoration: none;
         }
 
+        .btn-primary {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #34495e;
             color: white;
         }
 
@@ -88,7 +97,8 @@
             display: flex;
             align-items: center;
             padding: 12px 15px;
-
+            border-bottom: 1px solid #ecf0f1;
+            cursor: pointer;
             transition: background-color 0.2s;
         }
 
@@ -111,6 +121,8 @@
             position: fixed;
             top: 20px;
             left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(46, 204, 113, 0.9);
             color: white;
             padding: 10px 20px;
             border-radius: 4px;
@@ -119,33 +131,63 @@
         }
 
         /* 模拟图标的样式 */
-        。icon-rss:before {
+        .icon-rss:before {
             content: "📡";
         }
-        。icon-settings:before {
+        .icon-settings:before {
             content: "⚙️";
         }
-        。icon-cart:before {
+        .icon-cart:before {
             content: "🛒";
         }
-        。icon-copy:before {
+        .icon-copy:before {
             content: "📋";
         }
-        。icon-import:before {
+        .icon-import:before {
             content: "📥";
         }
     </style>
 </head>
-<内容>
+<body>
     <div class="container">
         <div class="header">
             <h1>Clash 订阅管理</h1>
+            <p>快速复制或导入您的 Clash 订阅</p>
+        </div>
 
+        <div class="button-group">
+            <div class="btn btn-primary" id="oneClickSubscribe">
+                <i class="icon-rss"></i>
+                <span>一键订阅</span>
+            </div>
+            <div class="btn btn-secondary" id="viewSubscription">
+                <i class="icon-settings"></i>
+                <span>查看订阅</span>
+            </div>
+            <div class="btn btn-accent" id="renewSubscription">
+                <i class="icon-cart"></i>
+                <span>续费</span>
+            </div>
+        </div>
+
+        <div class="option-list">
+            <div class="option-item" id="copySubscription">
+                <i class="icon-copy"></i>
+                <span>复制通用订阅地址</span>
+            </div>
+            <div class="option-item" id="importToClash">
+                <i class="icon-import"></i>
+                <span>一键导入到 Clash</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">复制成功！</div>
 
     <script>
         // 订阅地址
         const subscriptionUrl = "http://shentianen.xyz/neibu.yml";
-
+        
         // 复制订阅地址
         document。getElementById('copySubscription')。addEventListener('click', function() {
             navigator。clipboard。writeText(subscriptionUrl)。then(function() {
@@ -174,6 +216,20 @@
             window。已打开(subscriptionUrl, '_blank');
         });
 
+        // 续费按钮 - 这里只是示例，实际应指向续费页面
+        document。getElementById('renewSubscription')。addEventListener('click', function() {
+            alert('此功能尚未实现，请联系管理员进行续费');
+        });
+
+        // 显示提示信息
+        function showToast(message) {
+            const toast = document。getElementById('toast');
+            toast。textContent = message;
+            toast。style。display = 'block';
+            
+            setTimeout(function() {
+                toast。style。display = 'none';
+            }, 3000);
         }
     </script>
 </内容>
